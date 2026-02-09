@@ -45,8 +45,6 @@ static e_types	determineMultiCharType(std::string const& toDet, size_t toDetSize
 		++i;
 		j = i;
 		while (std::isdigit(toDet[i]) && i++ < toDetSize);
-		if (i == j)
-			return (NO_TYPE);
 		if (i == toDetSize)
 			return (DOUBLE);
 	}
@@ -56,7 +54,7 @@ static e_types	determineMultiCharType(std::string const& toDet, size_t toDetSize
 	}
 	else if (i == toDetSize)
 		return (INT);
-	if (toDet[i] == 'f' && i == toDetSize - 1) // -f case shouldnt work
+	if (toDet[i] == 'f' && i == toDetSize - 1)
 		return (FLOAT);
 	return (NO_TYPE);
 }
