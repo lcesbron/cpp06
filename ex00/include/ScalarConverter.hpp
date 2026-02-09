@@ -26,6 +26,12 @@ union u_value
 	double	d;
 };
 
+struct s_value
+{
+	bool	overflow;
+	u_value	val;
+};
+
 class ScalarConverter
 {
 	public:
@@ -33,5 +39,6 @@ class ScalarConverter
 };
 
 e_types	determineType(std::string const& toDet);
+s_value	computeValue(std::string const& str, e_types type);
 
 #endif //SCALARCONVERTER_HPP
