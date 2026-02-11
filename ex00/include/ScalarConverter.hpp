@@ -29,16 +29,23 @@ union u_value
 struct s_value
 {
 	bool	overflow;
+	bool	impossible;
+	bool	non_displyable;
+	e_types	type;
 	u_value	val;
 };
 
 class ScalarConverter
 {
+	private:
+		ScalarConverter();
+		~ScalarConverter();
 	public:
 		static void	convert(std::string const& toConvert);
 };
 
 e_types	determineType(std::string const& toDet);
 s_value	computeValue(std::string const& str, e_types type);
+void	printValues(s_value val);
 
 #endif //SCALARCONVERTER_HPP

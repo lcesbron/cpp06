@@ -13,6 +13,8 @@ static s_value	computeInt(std::string const& str)
 	s_value	ret;
 
 	ret.overflow = false;
+	ret.impossible = false;
+	ret.non_displyable = false;
 	ss >> ret.val.i;
 	if (ss.fail())
 	{
@@ -26,6 +28,8 @@ static s_value	computeFloat(std::string const& str)
 	s_value	ret ;
 
 	ret.overflow = false;
+	ret.impossible = false;
+	ret.non_displyable = false;
 	ret.val.f = std::strtof(str.c_str(), NULL);
 	if (errno)
 		ret.overflow = true;
@@ -37,6 +41,8 @@ static s_value	computeDouble(std::string const& str)
 	s_value	ret ;
 
 	ret.overflow = false;
+	ret.impossible = false;
+	ret.non_displyable = false;
 	ret.val.d = std::strtod(str.c_str(), NULL);
 	if (errno)
 		ret.overflow = true;
@@ -48,10 +54,12 @@ s_value	computeValue(std::string const& str, e_types type)
 	s_value	ret;
 
 	ret.overflow = false;
+	ret.impossible = false;
+	ret.non_displyable = false;
 	switch (type)
 	{
 		case CHAR:
-			ret.val.c = str[0];
+			ret.val.c = str[1];
 			break ;
 		case INT:
 			ret = computeInt(str);
@@ -83,5 +91,6 @@ s_value	computeValue(std::string const& str, e_types type)
 		default:
 			break ;
 	};
+	ret.type = type;
 	return (ret);
 };

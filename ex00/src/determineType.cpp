@@ -1,11 +1,10 @@
 #include "ScalarConverter.hpp"
+#include <cctype>
 #include <ctype.h>
 
-static e_types	determineOneCharType(std::string const& toDet)
+static e_types	determineChar(std::string const& toDet)
 {
-	if (std::isdigit(toDet[0]))
-		return (INT);
-	if (std::isprint(toDet[0]))
+	if (std::isprint(toDet[1]) && toDet[2] == '\'')
 		return (CHAR);
 	return (NO_TYPE);
 }
@@ -63,13 +62,10 @@ e_types	determineType(std::string const& toDet)
 {
 	size_t			toDetSize = toDet.size();
 
-	switch (toDetSize)
-	{
-		case 0:
-			return (NO_TYPE);
-		case 1:
-			return (determineOneCharType(toDet));
-		default:
-			return (determineMultiCharType(toDet, toDetSize));
-	}
+	if (!toDetSize)
+		return (NO_TYPE);
+	if (toDet[0] == '\'' && toDetSize == 3)
+		return (determineChar(toDet));
+	else
+		return (determineMultiCharType(toDet, toDetSize));
 }
