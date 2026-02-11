@@ -1,6 +1,5 @@
 #include "ScalarConverter.hpp"
 #include <cctype>
-#include <ctype.h>
 
 static e_types	determineChar(std::string const& toDet)
 {
