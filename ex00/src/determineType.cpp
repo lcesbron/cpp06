@@ -11,7 +11,6 @@ static e_types	determineChar(std::string const& toDet)
 static e_types	determineMultiCharType(std::string const& toDet, size_t toDetSize)
 {
 	size_t			i;
-	size_t			j;
 	bool			sign;
 
 	if (toDet == "-inff")
@@ -41,7 +40,6 @@ static e_types	determineMultiCharType(std::string const& toDet, size_t toDetSize
 	if (toDet[i] == '.')
 	{
 		++i;
-		j = i;
 		while (std::isdigit(toDet[i]) && i++ < toDetSize);
 		if (i == toDetSize)
 			return (DOUBLE);

@@ -1,6 +1,4 @@
 #include "ScalarConverter.hpp"
-#include <iostream>
-#include <ostream>
 
 ScalarConverter::ScalarConverter() {}
 ScalarConverter::~ScalarConverter() {}
