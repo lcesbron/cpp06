@@ -18,7 +18,7 @@ DEP_DIR		=		$(addprefix $(BUILD_DIR), dep/)
 
 #		SRC
 
-BASENAME	=		main ScalarConverter determineType printValues computeValue convert
+BASENAME	=		main Serializer
 
 SRC			=		$(addprefix $(SRC_DIR), $(addsuffix .cpp, $(BASENAME)))
 OBJ			=		$(addprefix $(OBJ_DIR), $(addsuffix .o, $(BASENAME)))
