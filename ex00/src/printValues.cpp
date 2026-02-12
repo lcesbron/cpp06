@@ -4,6 +4,7 @@
 #include <climits>
 #include <cmath>
 #include <csignal>
+#include <iomanip>
 #include <iostream>
 #include <limits>
 #include <linux/limits.h>
@@ -109,11 +110,11 @@ std::ostream&	operator<<(std::ostream& os, s_value& val)
 	}
 	else if (val.type >= FLOAT && val.type < DOUBLE)
 	{
-		os << val.val.f;
+		os << std::fixed << std::setprecision(10) << val.val.f << 'f';
 	}
 	else if (val.type >= DOUBLE)
 	{
-		os << val.val.d;
+		os << std::fixed << std::setprecision(10) << val.val.d;
 	}
 	return (os);
 }
