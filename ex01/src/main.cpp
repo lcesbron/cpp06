@@ -4,7 +4,7 @@
 
 int	main(void)
 {
-	t_data		a;
+	Data		a;
 	uintptr_t	ptr;
 
 	std::cout << "origigal pointer : " << &a << std::endl;

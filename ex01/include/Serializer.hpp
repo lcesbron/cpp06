@@ -12,8 +12,8 @@ class Serializer
 		~Serializer(void);
 		Serializer&	operator=(Serializer const& toCopy);
 	public:
-		static uintptr_t	serialize(t_data* ptr);
-		static t_data* 		deserialize(uintptr_t raw);
+		static uintptr_t	serialize(Data* ptr);
+		static Data* 		deserialize(uintptr_t raw);
 };
 
 #endif // SERIALIZER_HPP

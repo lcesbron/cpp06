@@ -1,7 +1,7 @@
 #ifndef DATA_HPP
 # define DATA_HPP
 
-typedef struct s_data	t_data;
+typedef struct s_data	Data;
 
 struct s_data
 {
