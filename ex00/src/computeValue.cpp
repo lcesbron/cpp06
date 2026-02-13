@@ -1,5 +1,5 @@
 #include "ScalarConverter.hpp"
-#include <errno.h>
+#include <cerrno>
 #include <cfloat>
 #include <cstdlib>
 #include <limits>
